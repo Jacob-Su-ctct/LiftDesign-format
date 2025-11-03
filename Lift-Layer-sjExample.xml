@@ -20,7 +20,6 @@
       <!-- Related component surfaces -->
       <Property label="critical_name" value="critical_surface_kettle"/>
       <Property label="critical_uuid" value="d762a9cf-5820-4b91-9f7a-97b239f7a052"/>
-      <Property label="smoothing" value="0%"/>
       <Property label="cut_name" value="cut_surface_kettle"/>
       <Property label="cut_uuid" value="3f2e6c9e-6b7d-4205-8b61-fc72ac134c83"/>
       <Property label="cut_offset" value="0.5m"/>
@@ -57,39 +56,23 @@
           <P id="14">808671.226945 376892.961302 66.131</P>
         </Pnts>
         <Faces>
-          <!-- optional: cut part of the composite surface -->
-          <Feature name="cut_faces">
-            <Property label="offset" value="0.5m"/>
-          </Feature>
+        <!-- composite surface, not distinct if the faces are from cut/fill/critical -->
           <F n="1">1 2 4</F>
           <F n="2">4 3 1</F>
           <F n="3">3 4 10</F>
           <F n="4">10 9 3</F>
           <F n="5">1 3 5</F>
           <F n="6">2 4 6</F>
-          <!-- optional: citical part of the composite surface -->
-          <Feature name="critical_faces">
-            <Property label="offset" value="0.3m"/>
-            <Property label="smoothing" value="0.8"/>
-          </Feature>          
           <F n="7">5 3 9</F>
           <F n="8">9 7 5</F>
           <F n="9">6 4 10</F>
           <F n="10">10 8 6</F>
           <F n="11">11 12 2</F>
-          <F n="12">11 2 1</F>
-          <!-- optional: fill part of the composite surface -->
-          <Feature name="fill_faces">
-            <Property label="offset" value="0.15m"/>
-          </Feature>          
+          <F n="12">11 2 1</F>      
           <F n="13">11 1 13</F>
           <F n="14">13 1 7</F>
           <F n="15">12 2 14</F>
           <F n="16">14 2 8</F>
-          <!-- optional: cut part of the composite surface -->
-          <Feature name="cut_faces">
-            <Property label="offset" value="0.5m"/>
-          </Feature>
           <F n="17">1 2 4</F>
           <F n="18">4 3 1</F>
           <F n="19">3 4 10</F>            
@@ -127,7 +110,6 @@
           <P id="22">808671.226945 376892.961302 66.131</P>
         </Pnts>
         <Faces>
-          <!-- composite surface, not distinct -->
           <F n="1">1 2 4</F>
           <F n="2">4 3 1</F>
           <F n="3">3 4 10</F>
