@@ -1,0 +1,239 @@
+<?xml version="1.0"?>
+<LandXML xmlns="http://www.landxml.org/schema/LandXML-1.2"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.landxml.org/schema/LandXML-1.2 http://www.landxml.org/schema/LandXML-1.2/LandXML-1.2.xsd"
+  date="2024-02-01" time="10:36:49" version="1.2" language="English" readOnly="false">
+  <Units>
+    <Metric areaUnit="squareMeter" linearUnit="meter" volumeUnit="cubicMeter"
+      temperatureUnit="celsius" pressureUnit="milliBars" diameterUnit="millimeter"
+      angularUnit="decimal degrees" directionUnit="decimal degrees"></Metric>
+  </Units>
+  <Project name="Lift Layer sj example"></Project>
+  <Application name="CTCT_LifLayer_Generator" desc="Export from CTCT_LifLayer_Generator" manufacturer="" version="0.1"
+    manufacturerURL="" timeStamp="2025-10-30T13:56:29.874129">
+    <!-- Related component surfaces -->
+    <Feature name="LiftDesign">
+      <Property label="document_uuid" value="e4a1b123-5678-4d9a-8b12-9c3f1a2b4567"/>
+      <Property label="design_name" value="lift_layers_kettle"/>
+    </Feature>
+  </Application>
+    
+  <Surfaces>
+    <Feature name="metadata">
+      <!-- Related component surfaces -->
+      <Property label="critical_name" value="critical_surface_kettle"/>
+      <Property label="critical_uuid" value="d762a9cf-5820-4b91-9f7a-97b239f7a052"/>
+      <Property label="smoothing" value="0%"/>
+      <Property label="cut_name" value="cut_surface_kettle"/>
+      <Property label="cut_uuid" value="3f2e6c9e-6b7d-4205-8b61-fc72ac134c83"/>
+      <Property label="cut_offset" value="0.5m"/>
+      <Property label="fill_name" value="fill_surface_kettle"/>
+      <Property label="fill_uuid" value="a1b0e41b-8c17-46c0-bf16-b6db8f8e3a93"/>
+      <Property label="fill_offset" value="0.15m"/>
+    </Feature>
+    <Surface name="composite1" uuid="bbf5a86c-8998-4ee2-a306-03b1ede2f0a5">
+      <Definition surfType="TIN" elevMax="66.42511765933037" elevMin="66.131">
+        <Feature name="uuid">
+          <Property label="uuid" value="bbf5a86c-8998-4ee2-a306-03b1ede2f0a5"/>
+        </Feature>
+        <Pnts>
+          <P id="1">808638.726945 376852.961302 66.131</P>
+          <P id="2">808653.726945 376852.961302 66.131</P>
+          <P id="3">808638.726945 376855.3142432746 66.42511765933037</P>
+          <P id="4">808653.726945 376855.3142432746 66.42511765933037</P>
+          <P id="5">808638.4328275493 376855.3142432746 66.131</P>
+          <P id="6">808654.0210624507 376855.3142432746 66.131</P>
+          <P id="7">808633.726945 376892.961302 66.131</P>
+          <P id="8">808658.726945 376892.961302 66.131</P>
+          <P id="9">808634.0210629276 376892.961302 66.42511765933037</P>
+          <P id="10">808658.4328270725 376892.961302 66.42511765933037</P>
+          <P id="11">808621.226945 376832.961302 66.131</P>
+          <P id="12">808671.226945 376832.961302 66.131</P>
+          <P id="13">808621.226945 376892.961302 66.131</P>
+          <P id="14">808671.226945 376892.961302 66.131</P>
+        </Pnts>
+        <Faces>
+          <!-- cut part of the composite surface -->
+          <Feature name="cut_faces">
+            <Property label="offset" value="0.5m"/>
+          </Feature>
+          <F n="1">1 2 4</F>
+          <F n="2">4 3 1</F>
+          <F n="3">3 4 10</F>
+          <F n="4">10 9 3</F>
+          <F n="5">1 3 5</F>
+          <F n="6">2 4 6</F>
+          <!-- citical part of the composite surface -->
+          <Feature name="critical_faces">
+            <Property label="offset" value="0.3m"/>
+            <Property label="smoothing" value="0.8"/>
+          </Feature>          
+          <F n="7">5 3 9</F>
+          <F n="8">9 7 5</F>
+          <F n="9">6 4 10</F>
+          <F n="10">10 8 6</F>
+          <F n="11">11 12 2</F>
+          <F n="12">11 2 1</F>
+          <!-- fill part of the composite surface -->
+          <Feature name="fill_faces">
+            <Property label="offset" value="0.15m"/>
+          </Feature>          
+          <F n="13">11 1 13</F>
+          <F n="14">13 1 7</F>
+          <F n="15">12 2 14</F>
+          <F n="16">14 2 8</F>
+        </Faces>
+      </Definition>
+    </Surface>
+    <Surface name="composite2">
+      <Definition surfType="TIN" elevMax="66.71923531866074" elevMin="66.131">
+        <Feature name="uuid">
+          <Property label="uuid" value="0a24fb63-e140-4598-9b88-309df81c2c00"/>
+        </Feature>        
+        <Pnts>
+          <P id="1">808638.726945 376855.3142432746 66.42511765933037</P>
+          <P id="2">808653.726945 376855.3142432746 66.42511765933037</P>
+          <P id="3">808638.726945 376857.66718454927 66.71923531866074</P>
+          <P id="4">808653.726945 376857.66718454927 66.71923531866074</P>
+          <P id="5">808638.1733122638 376859.7433092174 66.42511765933037</P>
+          <P id="6">808654.2805777362 376859.7433092174 66.42511765933037</P>
+          <P id="7">808634.0210629276 376892.961302 66.42511765933037</P>
+          <P id="8">808658.4328270725 376892.961302 66.42511765933037</P>
+          <P id="9">808634.3151799014 376892.961302 66.71923531866074</P>
+          <P id="10">808658.1387100986 376892.961302 66.71923531866074</P>
+          <P id="11">808638.726945 376852.961302 66.131</P>
+          <P id="12">808653.726945 376852.961302 66.131</P>
+          <P id="13">808633.726945 376892.961302 66.131</P>
+          <P id="14">808658.726945 376892.961302 66.131</P>
+          <P id="15">808638.1387100986 376857.66718454927 66.131</P>
+          <P id="16">808654.3151799014 376857.66718454927 66.131</P>
+          <P id="17">808638.4328275493 376855.3142432746 66.131</P>
+          <P id="18">808654.0210624507 376855.3142432746 66.131</P>
+          <P id="19">808621.226945 376832.961302 66.131</P>
+          <P id="20">808671.226945 376832.961302 66.131</P>
+          <P id="21">808621.226945 376892.961302 66.131</P>
+          <P id="22">808671.226945 376892.961302 66.131</P>
+        </Pnts>
+        <Faces>
+          <!-- composite surface, not distinct -->
+          <F n="1">1 2 4</F>
+          <F n="2">4 3 1</F>
+          <F n="3">3 4 10</F>
+          <F n="4">10 9 3</F>
+          <F n="5">1 3 5</F>
+          <F n="6">2 4 6</F>
+          <F n="7">5 3 9</F>
+          <F n="8">9 7 5</F>
+          <F n="9">6 4 10</F>
+          <F n="10">10 8 6</F>
+          <F n="11">11 12 2</F>
+          <F n="12">2 1 11</F>
+          <F n="13">17 11 1</F>
+          <F n="14">15 17 1</F>
+          <F n="15">1 5 15</F>
+          <F n="16">13 15 5</F>
+          <F n="17">5 7 13</F>
+          <F n="18">12 18 2</F>
+          <F n="19">16 18 2</F>
+          <F n="20">2 6 16</F>
+          <F n="21">14 16 6</F>
+          <F n="22">6 8 14</F>
+          <F n="23">19 20 12</F>
+          <F n="24">19 12 11</F>
+          <F n="25">19 11 21</F>
+          <F n="26">21 11 13</F>
+          <F n="27">20 12 22</F>
+          <F n="28">22 12 14</F>
+        </Faces>
+      </Definition>
+    </Surface>
+    <!-- below are the source surfaces, cut/fill/critical -->
+    <Surface name="critical_surface_kettle">
+      <Definition surfType="TIN" elevMax="66.71923531866074" elevMin="66.131">
+        <Feature name="uuid">
+          <Property label="uuid" value="d762a9cf-5820-4b91-9f7a-97b239f7a052"/>
+        </Feature>
+        <Pnts>
+          <P id="1">808640.726945 376854.961302 66.25</P>
+          <P id="2">808651.726945 376854.961302 66.25</P>
+          <P id="3">808640.726945 376865.961302 66.45</P>
+          <P id="4">808651.726945 376865.961302 66.45</P>
+          <P id="5">808635.726945 376875.961302 66.35</P>
+          <P id="6">808656.726945 376875.961302 66.35</P>
+          <P id="7">808640.726945 376885.961302 66.25</P>
+          <P id="8">808651.726945 376885.961302 66.25</P>
+        </Pnts>
+        <Faces>
+          <F n="1">1 2 4</F>
+          <F n="2">4 3 1</F>
+          <F n="3">3 4 6</F>
+          <F n="4">6 5 3</F>
+          <F n="5">5 6 8</F>
+          <F n="6">8 7 5</F>
+          <F n="7">1 3 5</F>
+          <F n="8">5 7 1</F>
+          <F n="9">2 4 6</F>
+          <F n="10">6 8 2</F>
+        </Faces>
+      </Definition>
+    </Surface>     
+    <Surface name="cut_surface_kettle">
+      <Definition surfType="TIN" elevMax="66.71923531866074" elevMin="66.131">
+        <Feature name="uuid">
+          <Property label="uuid" value="3f2e6c9e-6b7d-4205-8b61-fc72ac134c83"/>
+        </Feature>
+        <Pnts>
+          <P id="1">808642.726945 376850.961302 66.55</P>
+          <P id="2">808649.726945 376850.961302 66.55</P>
+          <P id="3">808642.726945 376860.961302 66.71923531866074</P>
+          <P id="4">808649.726945 376860.961302 66.71923531866074</P>
+          <P id="5">808637.726945 376870.961302 66.65</P>
+          <P id="6">808654.726945 376870.961302 66.65</P>
+          <P id="7">808642.726945 376880.961302 66.55</P>
+          <P id="8">808649.726945 376880.961302 66.55</P>
+        </Pnts>
+        <Faces>
+          <F n="1">1 2 4</F>
+          <F n="2">4 3 1</F>
+          <F n="3">3 4 6</F>
+          <F n="4">6 5 3</F>
+          <F n="5">5 6 8</F>
+          <F n="6">8 7 5</F>
+          <F n="7">1 3 5</F>
+          <F n="8">5 7 1</F>
+          <F n="9">2 4 6</F>
+          <F n="10">6 8 2</F>
+        </Faces>
+      </Definition>
+    </Surface>
+    <Surface name="fill_surface_kettle">
+      <Definition surfType="TIN" elevMax="66.71923531866074" elevMin="66.131">
+        <Feature name="uuid">
+          <Property label="uuid" value="a1b0e41b-8c17-46c0-bf16-b6db8f8e3a93"/>
+        </Feature>
+        <Pnts>
+          <P id="1">808638.726945 376856.961302 66.131</P>
+          <P id="2">808653.726945 376856.961302 66.131</P>
+          <P id="3">808638.726945 376866.961302 66.20</P>
+          <P id="4">808653.726945 376866.961302 66.20</P>
+          <P id="5">808633.726945 376876.961302 66.15</P>
+          <P id="6">808658.726945 376876.961302 66.15</P>
+          <P id="7">808638.726945 376886.961302 66.131</P>
+          <P id="8">808653.726945 376886.961302 66.131</P>
+        </Pnts>
+        <Faces>
+          <F n="1">1 2 4</F>
+          <F n="2">4 3 1</F>
+          <F n="3">3 4 6</F>
+          <F n="4">6 5 3</F>
+          <F n="5">5 6 8</F>
+          <F n="6">8 7 5</F>
+          <F n="7">1 3 5</F>
+          <F n="8">5 7 1</F>
+          <F n="9">2 4 6</F>
+          <F n="10">6 8 2</F>
+        </Faces>
+      </Definition>
+    </Surface>   
+  </Surfaces>
+</LandXML>
