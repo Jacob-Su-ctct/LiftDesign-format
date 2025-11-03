@@ -4,11 +4,11 @@ The LiftLayer output format specification is built upon the LandXML-1.2 schema. 
 
 ## LiftLayer Output Format Specification (LandXML-1.2 based)
 
-The file typically utilizes the `<Application>` element to define the design parameters and the `<Surfaces>` element to define the composite surface and metadata references. The tool generating this output is named "CTCT_LifLayer_Generator".
+The file utilizes the `<Project>` element to define the design parameters and surface metadata references, and the `<Surfaces>` element to define the composite surface data. The tool generating this output is named "CTCT_LifLayer_Generator".
 
 ### 1. Project Level
 
-The top-level design metadata is stored in a `<Project>` element containing a feature with code "infield.surface".
+The top-level design metadata and surface references are stored in a `<Project>` element containing a feature with code "infield.surface".
 
 | Property Label | XML Path Example | Description |
 |----------------|------------------|-------------|
@@ -19,18 +19,6 @@ The top-level design metadata is stored in a `<Project>` element containing a fe
 | project_uuid | `Property[@label="project_uuid"]` | Unique identifier for the project. |
 | created_date | `Property[@label="created_date"]` | Date when the project was created. |
 | last_modified | `Property[@label="last_modified"]` | Date when the project was last modified. |
-
-### 2. Application Level (optional)
-
-The `<Application>` element identifies the tool and its version that generated the LiftLayer output but no longer contains the design metadata (moved to Project level).
-
-### 3. Surface Metadata
-
-Information regarding the source surfaces (Critical, Cut, Fill) used to build the final composite surface is stored within the `<Surfaces>` element under a `<Feature>` named "metadata".
-
-| Property Label | XML Path Example | Description |
-|----------------|------------------|-------------|
-| Feature Name | `Surfaces/Feature[@name="metadata"]` | Defines references and configuration for the component surfaces. |
 | critical_name | `Property[@label="critical_name"]` | Name of the Critical Surface reference. |
 | critical_uuid | `Property[@label="critical_uuid"]` | Unique identifier (UUID) for the Critical Surface. |
 | cut_name | `Property[@label="cut_name"]` | Name of the Cut Surface reference. |
@@ -40,6 +28,15 @@ Information regarding the source surfaces (Critical, Cut, Fill) used to build th
 | fill_uuid | `Property[@label="fill_uuid"]` | Unique identifier (UUID) for the Fill Surface. |
 | fill_offset | `Property[@label="fill_offset"]` | Offset value applied to the fill surface. |
 | smoothing | `Property[@label="smoothing"]` | Overall smoothing percentage applied to the design, often applied to surface transitions. |
+| layer_number | `Property[@label="layer_number"]` | Total number of composite surfaces when generated. |
+
+### 2. Application Level (optional)
+
+The `<Application>` element identifies the tool and its version that generated the LiftLayer output but no longer contains the design metadata (moved to Project level).
+
+### 3. Surface Definitions
+
+The `<Surfaces>` element contains the composite surface definitions and the source surfaces (Critical, Cut, Fill) used to build the final composite surfaces. Each surface includes geometric data (points and triangular faces) and optional feature classifications.
 
 #### Composite Surface Generation Logic
 
@@ -57,7 +54,7 @@ END
 
 This logic dictates which input surface elevation is used for the composite surface at any given point.
 
-### 4. Face Classifications  (optional)
+### 4. Face Classifications (optional)
 
 Within the composite surface definition (using `surfType="TIN"`), specific `<Feature>` tags are inserted into the `<Faces>` element to classify the origin of each triangular face (`<F>`).
 
