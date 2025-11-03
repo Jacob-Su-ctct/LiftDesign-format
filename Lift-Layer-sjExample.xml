@@ -8,16 +8,18 @@
       temperatureUnit="celsius" pressureUnit="milliBars" diameterUnit="millimeter"
       angularUnit="decimal degrees" directionUnit="decimal degrees"></Metric>
   </Units>
-  <Project name="Lift Layer sj example"></Project>
-  <Application name="CTCT_LifLayer_Generator" desc="Export from CTCT_LifLayer_Generator" manufacturer="" version="0.1"
-    manufacturerURL="" timeStamp="2025-10-30T13:56:29.874129">
-    <!-- Related component surfaces -->
-    <Feature name="LiftDesign">
-      <Property label="document_uuid" value="e4a1b123-5678-4d9a-8b12-9c3f1a2b4567"/>
-      <Property label="design_name" value="lift_layers_kettle"/>
+  <Project name="Lift Layer sj example">
+    <Feature code="infield.surface">
+      <Property label="type" value="com.trimble.ctct.darkcity.fileformats.infield.lift-layers"/>
+      <Property label="version" value="0.1"/>
+      <Property label="editable" value="1"/>  <!-- 1 for true. If editable, the source surfaces must be included in the design file -->  
+      <Property label="project_uuid" value="f8b2c456-7890-4e1b-9c23-4d5e6f7a8b9c"/>
+      <Property label="created_date" value="2024-02-01"/>
+      <Property label="last_modified" value="2025-10-30"/>
     </Feature>
-  </Application>
-    
+  </Project>
+  <Application name="CTCT_LifLayer_Generator" desc="Export from CTCT_LifLayer_Generator" manufacturer="" version="0.1"
+    manufacturerURL="" timeStamp="2025-10-30T13:56:29.874129"></Application>   <!-- Optional -->  
   <Surfaces>
     <Feature name="metadata">
       <!-- Related component surfaces -->
@@ -30,11 +32,13 @@
       <Property label="fill_name" value="fill_surface_kettle"/>
       <Property label="fill_uuid" value="a1b0e41b-8c17-46c0-bf16-b6db8f8e3a93"/>
       <Property label="fill_offset" value="0.15m"/>
+      <Property label="layer_number" value="2" />  <!-- total number of composite surfaces when generated-->  
     </Feature>
-    <Surface name="composite1" uuid="bbf5a86c-8998-4ee2-a306-03b1ede2f0a5">
+    <Surface name="composite1 or something else" uuid="bbf5a86c-8998-4ee2-a306-03b1ede2f0a5">
       <Definition surfType="TIN" elevMax="66.42511765933037" elevMin="66.131">
         <Feature name="uuid">
           <Property label="uuid" value="bbf5a86c-8998-4ee2-a306-03b1ede2f0a5"/>
+          <Property label="layer_index" value="1"/>
         </Feature>
         <Pnts>
           <P id="1">808638.726945 376852.961302 66.131</P>
@@ -85,10 +89,11 @@
         </Faces>
       </Definition>
     </Surface>
-    <Surface name="composite2">
+    <Surface name="composite2 or something else">
       <Definition surfType="TIN" elevMax="66.71923531866074" elevMin="66.131">
         <Feature name="uuid">
           <Property label="uuid" value="0a24fb63-e140-4598-9b88-309df81c2c00"/>
+          <Property label="layer_index" value="2"/>
         </Feature>        
         <Pnts>
           <P id="1">808638.726945 376855.3142432746 66.42511765933037</P>
@@ -148,7 +153,7 @@
       </Definition>
     </Surface>
     <!-- below are the source surfaces, cut/fill/critical -->
-    <Surface name="critical_surface_kettle">
+    <Surface name="critical">
       <Definition surfType="TIN" elevMax="66.71923531866074" elevMin="66.131">
         <Feature name="uuid">
           <Property label="uuid" value="d762a9cf-5820-4b91-9f7a-97b239f7a052"/>
@@ -177,7 +182,7 @@
         </Faces>
       </Definition>
     </Surface>     
-    <Surface name="cut_surface_kettle">
+    <Surface name="cute">
       <Definition surfType="TIN" elevMax="66.71923531866074" elevMin="66.131">
         <Feature name="uuid">
           <Property label="uuid" value="3f2e6c9e-6b7d-4205-8b61-fc72ac134c83"/>
@@ -206,7 +211,7 @@
         </Faces>
       </Definition>
     </Surface>
-    <Surface name="fill_surface_kettle">
+    <Surface name="fill">
       <Definition surfType="TIN" elevMax="66.71923531866074" elevMin="66.131">
         <Feature name="uuid">
           <Property label="uuid" value="a1b0e41b-8c17-46c0-bf16-b6db8f8e3a93"/>
