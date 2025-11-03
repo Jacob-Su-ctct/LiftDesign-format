@@ -1,0 +1,10 @@
+# Global code owners for LiftDesign format repository
+# These users will be automatically requested for review when PRs are opened
+
+# Global ownership - applies to all files
+* @Jacob-Su-ctct
+
+# Specific file ownership
+README.md @Jacob-Su-ctct
+*.xml @Jacob-Su-ctct
+*.md @Jacob-Su-ctct
