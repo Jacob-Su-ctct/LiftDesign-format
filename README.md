@@ -27,7 +27,6 @@ The top-level design metadata and surface references are stored in a `<Project>`
 | fill_name | `Property[@label="fill_name"]` | Name of the Fill Surface reference. |
 | fill_uuid | `Property[@label="fill_uuid"]` | Unique identifier (UUID) for the Fill Surface. |
 | fill_offset | `Property[@label="fill_offset"]` | Offset value applied to the fill surface. |
-| smoothing | `Property[@label="smoothing"]` | Overall smoothing percentage applied to the design, often applied to surface transitions. |
 | layer_number | `Property[@label="layer_number"]` | Total number of composite surfaces when generated. |
 
 ### 2. Application Level (optional)
@@ -54,31 +53,15 @@ END
 
 This logic dictates which input surface elevation is used for the composite surface at any given point.
 
-### 4. Face Classifications (optional)
+### 4. Composite Surface Structure
 
-Within the composite surface definition (using `surfType="TIN"`), specific `<Feature>` tags are inserted into the `<Faces>` element to classify the origin of each triangular face (`<F>`). These features group faces by their source surface and can include additional properties specific to each face type.
+The composite surfaces are defined within the `<Surfaces>` element and contain the merged geometric data from the source surfaces (Critical, Cut, Fill). Each composite surface includes:
 
-#### Face Feature Structure
+- **Surface Definition**: Contains points (`<Pnts>`) and triangular faces (`<Faces>`)
+- **Surface Metadata**: UUID and layer index for identification
+- **Triangular Faces**: The actual surface geometry without face type classification
 
-Each face classification follows this XML structure:
-
-```xml
-<!-- optional: [surface type] part of the composite surface -->
-<Feature name="[face_type]">
-  <Property label="[property_name]" value="[property_value]"/>
-  <!-- Additional properties as needed -->
-</Feature>
-```
-
-| Feature Name | Description | Related Properties | Example XML |
-|--------------|-------------|-------------------|-------------|
-| cut_faces | Classifies triangular faces belonging to the cut portion of the composite surface. | offset: Applied cut offset value | `<Feature name="cut_faces"><Property label="offset" value="0.5m"/></Feature>` |
-| critical_faces | Classifies triangular faces belonging to the critical portion of the composite surface. | offset: Applied offset value<br>smoothing: Smoothing factor applied | `<Feature name="critical_faces"><Property label="offset" value="0.3m"/><Property label="smoothing" value="0.8"/></Feature>` |
-| fill_faces | Classifies triangular faces belonging to the fill portion of the composite surface. | offset: Applied fill offset value | `<Feature name="fill_faces"><Property label="offset" value="0.15m"/></Feature>` |
-
-#### Face Grouping
-
-The triangular faces (`<F>`) that follow each `<Feature>` tag belong to that classification until the next `<Feature>` tag is encountered or the `<Faces>` section ends. This allows for flexible grouping of faces based on their source surface and properties.
+The faces within each composite surface represent the result of applying the composite surface generation logic to the source surfaces, but do not retain individual classification by source surface type.
 
 ---
 
