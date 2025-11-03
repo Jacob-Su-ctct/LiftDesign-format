@@ -1,4 +1,4 @@
-# LiftDesign Format Proposal
+# LiftDesign Format Proposal v0.3
 
 The LiftLayer output format specification is built upon the LandXML-1.2 schema. This format is necessary for sharing the design with other machines or systems and must support signature validation.
 
@@ -15,7 +15,7 @@ The top-level design metadata and surface references are stored in a `<Project>`
 | Feature Code | `Project/Feature[@code="infield.surface"]` | Defines the design document metadata and project configuration. |
 | type | `Property[@label="type"]` | Specifies the file format type identifier. |
 | version | `Property[@label="version"]` | Version of the LiftLayer format specification. |
-| editable | `Property[@label="editable"]` | Flag indicating if the design is editable (1=true, 0=false). |
+| editable | `Property[@label="editable"]` | Flag indicating if the design is editable (1=true, 0=false). If editable, the source surfaces must be included in the design file |
 | project_uuid | `Property[@label="project_uuid"]` | Unique identifier for the project. |
 | created_date | `Property[@label="created_date"]` | Date when the project was created. |
 | last_modified | `Property[@label="last_modified"]` | Date when the project was last modified. |
@@ -56,13 +56,29 @@ This logic dictates which input surface elevation is used for the composite surf
 
 ### 4. Face Classifications (optional)
 
-Within the composite surface definition (using `surfType="TIN"`), specific `<Feature>` tags are inserted into the `<Faces>` element to classify the origin of each triangular face (`<F>`).
+Within the composite surface definition (using `surfType="TIN"`), specific `<Feature>` tags are inserted into the `<Faces>` element to classify the origin of each triangular face (`<F>`). These features group faces by their source surface and can include additional properties specific to each face type.
 
-| Feature Name | Description | Related Properties (Examples) |
-|--------------|-------------|------------------------------|
-| cut_faces | Classifies triangular faces belonging to the cut portion of the composite surface. | offset: "0.5m" |
-| critical_faces | Classifies triangular faces belonging to the critical portion of the composite surface. | offset: "0.3m"; smoothing: "0.8" |
-| fill_faces | Classifies triangular faces belonging to the fill portion of the composite surface. | offset: "0.15m" |
+#### Face Feature Structure
+
+Each face classification follows this XML structure:
+
+```xml
+<!-- optional: [surface type] part of the composite surface -->
+<Feature name="[face_type]">
+  <Property label="[property_name]" value="[property_value]"/>
+  <!-- Additional properties as needed -->
+</Feature>
+```
+
+| Feature Name | Description | Related Properties | Example XML |
+|--------------|-------------|-------------------|-------------|
+| cut_faces | Classifies triangular faces belonging to the cut portion of the composite surface. | offset: Applied cut offset value | `<Feature name="cut_faces"><Property label="offset" value="0.5m"/></Feature>` |
+| critical_faces | Classifies triangular faces belonging to the critical portion of the composite surface. | offset: Applied offset value<br>smoothing: Smoothing factor applied | `<Feature name="critical_faces"><Property label="offset" value="0.3m"/><Property label="smoothing" value="0.8"/></Feature>` |
+| fill_faces | Classifies triangular faces belonging to the fill portion of the composite surface. | offset: Applied fill offset value | `<Feature name="fill_faces"><Property label="offset" value="0.15m"/></Feature>` |
+
+#### Face Grouping
+
+The triangular faces (`<F>`) that follow each `<Feature>` tag belong to that classification until the next `<Feature>` tag is encountered or the `<Faces>` section ends. This allows for flexible grouping of faces based on their source surface and properties.
 
 ---
 
