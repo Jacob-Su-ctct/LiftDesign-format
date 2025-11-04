@@ -69,3 +69,4 @@ This specification details the structure for defining the lift layers within Lan
 
 ### Open questions: 
 - We have the UUID for designs in ObjectStore database, but so far, I don't think we have referenced them in design files. Do we need to have the UUIDs for the surfaces and UUID for the design file in the LandXML? 
+Answer:  We can consult with Whakaoti together when we have a complete picture.
