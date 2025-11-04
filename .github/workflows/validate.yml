@@ -1,0 +1,34 @@
+name: Validate LiftDesign Format
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Validate XML Files
+      run: |
+        # Check if XML files are well-formed
+        for file in *.xml; do
+          if [ -f "$file" ]; then
+            echo "Validating $file"
+            xmllint --noout "$file" && echo "$file is valid" || echo "$file has errors"
+          fi
+        done
+    
+    - name: Check Documentation
+      run: |
+        # Ensure README.md exists and is not empty
+        if [ -f "README.md" ] && [ -s "README.md" ]; then
+          echo "README.md exists and is not empty"
+        else
+          echo "README.md is missing or empty"
+          exit 1
+        fi
