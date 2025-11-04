@@ -2,11 +2,11 @@
 # These users will be automatically requested for review when PRs are opened
 
 # Global ownership - applies to all files
-* @Jacob-Su-ctct
+* @Jacob-Su-ctct @piotr-dziwinski-ctct @matt-garrett-ctct
 
 # Specific file ownership
-README.md @Jacob-Su-ctct
-*.xml @Jacob-Su-ctct
-*.md @Jacob-Su-ctct
+README.md @Jacob-Su-ctct @piotr-dziwinski-ctct @matt-garrett-ctct
+*.xml @Jacob-Su-ctct @piotr-dziwinski-ctct @matt-garrett-ctct
+*.md @Jacob-Su-ctct @piotr-dziwinski-ctct @matt-garrett-ctct
 
-# TODO: Add @piotr-dziwinski-ctct once collaboration invitation is accepted
+# Note: rene-arndt-ctct username not found - please verify correct GitHub username
