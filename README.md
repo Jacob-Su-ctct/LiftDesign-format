@@ -68,4 +68,4 @@ The faces within each composite surface represent the result of applying the com
 This specification details the structure for defining the lift layers within LandXML.
 
 ### Open questions: 
-- We have the UUID for designs in ObjectStore database, but so far, I don't think we have referenced them in design files. Do we need to have the UUIDs for the surfaces and UUID for the design file in the LandXML? 
+- We have the UUID for designs in ObjectStore database, but so far, I don't think we have referenced them in design files. Do we need to have the UUIDs for the surfaces and UUID for the design file in the LandXML? (To be discussed.)
