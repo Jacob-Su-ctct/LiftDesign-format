@@ -2,11 +2,9 @@
 # These users will be automatically requested for review when PRs are opened
 
 # Global ownership - applies to all files
-* @Jacob-Su-ctct
+* @Jacob-Su-ctct @piotr-dziwinski-ctct @matt-garrett-ctct @rene-arndt
 
 # Specific file ownership
-README.md @Jacob-Su-ctct
-*.xml @Jacob-Su-ctct
-*.md @Jacob-Su-ctct
-
-# TODO: Add @piotr-dziwinski-ctct once collaboration invitation is accepted
+README.md @Jacob-Su-ctct @piotr-dziwinski-ctct @matt-garrett-ctct @rene-arndt
+*.xml @Jacob-Su-ctct @piotr-dziwinski-ctct @matt-garrett-ctct @rene-arndt
+*.md @Jacob-Su-ctct @piotr-dziwinski-ctct @matt-garrett-ctct @rene-arndt
