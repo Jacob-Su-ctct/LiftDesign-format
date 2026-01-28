@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?><LandXML xmlns="http://www.landxml.org/schema/LandXML-1.2" date="2022-11-01" time="10:51:28" version="1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.landxml.org/schema/LandXML-1.2 http://www.landxml.org/schema/LandXML-1.2/LandXML-1.2.xsd">
+  <Project name="Infield Design">
+    <Feature code="infield.surface">
+      <Property label="type" value="com.trimble.ctct.darkcity.fileformats.infield.lift-layers"/>
+      <Property label="version" value="1"/>
+      <Property label="criticalSurfaceHash" value="3362ca5daeb29dbcd7c98abf29a76644f7febd6ac24a83c09a70ebbdda4ded03"/>
+
+      <Feature code="surfaceData.fill">
+        <Property label="type" value="quick-slope"/>
+        <Property label="heading" value="0.00000"/>
+        <Property label="crossSlope" value="0.00000"/>
+        <Property label="mainfall" value="0.000000"/>
+        <Property label="origin" value="376727.929523 808530.570963 67.933050"/>
+        <Property label="layerThickness" value="0.0000"/>
+      </Feature>
+    </Feature>
+  </Project>
+  <Units>
+    <Metric angularUnit="radians" areaUnit="squareMeter" diameterUnit="meter" directionUnit="radians" elevationUnit="meter" heightUnit="meter" linearUnit="meter" pressureUnit="milliBars" temperatureUnit="celsius" velocityUnit="kilometersPerHour" volumeUnit="cubicMeter" widthUnit="meter"/>
+  </Units>
+  <Surfaces>
+    <Surface desc="Generated Surface" name="Layer 1">
+      <Definition surfType="TIN">
+        <Pnts>
+          <P id="1">376692 808354 65.85</P>
+          <P id="2">376691 808355 65.8541</P>
+          <P id="3">376691 808354 65.85</P>
+          <P id="4">376699 808359 65.933</P>
+          <P id="5">376696 808392 65.933</P>
+          <P id="6">376699 808356 65.85</P>
+          <P id="7">376699 808358 65.8598</P>
+          <P id="8">376695 808355 65.85</P>
+          <P id="9">376700 808356 65.85</P>
+        </Pnts>
+        <Faces>
+          <F>3225 43 3223</F>
+          <F>4 5 6</F>
+          <F>3224 8 3225</F>
+          <F>4087 11 4088</F>
+          <F>3119 3117 3116</F>
+          <F>16 17 18</F>
+        </Faces>
+      </Definition>
+    </Surface>
+    <Surface desc="Generated Surface" name="Layer 2">
+      <Definition surfType="TIN">
+        <Pnts>
+          <P id="1">376692 808354 65.85</P>
+          <P id="2">376691 808355 65.8541</P>
+          <P id="3">376691 808354 65.85</P>
+          <P id="4">376699 808359 65.933</P>
+        </Pnts>
+        <Faces>
+          <F>3225 43 3223</F>
+        </Faces>
+      </Definition>
+    </Surface>
+  </Surfaces>
+</LandXML>
