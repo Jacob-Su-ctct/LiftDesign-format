@@ -12,22 +12,21 @@ The top-level design metadata and surface references are stored in a `<Project>`
 
 | Property Label | XML Path Example | Description |
 |----------------|------------------|-------------|
-| Feature Code | `Project/Feature[@code="infield.surface"]` | Defines the design document metadata and project configuration. |
+| Feature Code | `Project/Feature[@code="liftlayers.metadata"]` | Defines the design document metadata and project configuration. |
 | type | `Property[@label="type"]` | Specifies the file format type identifier. |
 | version | `Property[@label="version"]` | Version of the LiftLayer format specification. |
 | editable | `Property[@label="editable"]` | Flag indicating if the design is editable (1=true, 0=false). If editable, the source surfaces must be included in the design file |
-| project_uuid | `Property[@label="project_uuid"]` | Unique identifier for the project. |
-| created_date | `Property[@label="created_date"]` | Date when the project was created. |
-| last_modified | `Property[@label="last_modified"]` | Date when the project was last modified. |
-| critical_name | `Property[@label="critical_name"]` | Name of the Critical Surface reference. |
-| critical_uuid | `Property[@label="critical_uuid"]` | Unique identifier (UUID) for the Critical Surface. |
-| cut_name | `Property[@label="cut_name"]` | Name of the Cut Surface reference. |
-| cut_uuid | `Property[@label="cut_uuid"]` | Unique identifier (UUID) for the Cut Surface. |
-| cut_offset | `Property[@label="cut_offset"]` | Offset value applied to the cut surface. Separate offsets are required for cut and fill surfaces. |
-| fill_name | `Property[@label="fill_name"]` | Name of the Fill Surface reference. |
-| fill_uuid | `Property[@label="fill_uuid"]` | Unique identifier (UUID) for the Fill Surface. |
-| fill_offset | `Property[@label="fill_offset"]` | Offset value applied to the fill surface. |
-| layer_number | `Property[@label="layer_number"]` | Total number of composite surfaces when generated. |
+| criticalDesignFile | `Property[@label="criticalDesignFile"]` | Relative design path to the critical design file. |
+| criticalSurfaceName | `Property[@label="criticalSurfaceName"]` | Name of the critical surface. |
+| surfaceData.fill | `Feature[@code="surfaceData.fill"]` | Metadata block for the fill surface data. |
+| surfaceData.fill/type | `Feature[@code="surfaceData.fill"]/Property[@label="type"]` | Type of surface data used fpr the fill surface. |
+| surfaceData.fill/heading | `Feature[@code="surfaceData.fill"]/Property[@label="heading"]` | (For quick slope type) Heading of the quick slope fill surface. |
+| surfaceData.fill/mainfall | `Feature[@code="surfaceData.fill"]/Property[@label="mainfall"]` | (For quick slope type) Mainfall used for the quick slope fill surface. |
+| surfaceData.fill/crossSlope | `Feature[@code="surfaceData.fill"]/Property[@label="crossSlope"]` | (For quick slope type) Cross slope used for the quick slope fill surface. |
+| surfaceData.fill/designFile | `Feature[@code="surfaceData.fill"]/Property[@label="designFile"]` | (For design type) Relative path to the design file of the fill surface. |
+| surfaceData.fill/surface | `Feature[@code="surfaceData.fill"]/Property[@label="surface"]` | (For design type) Name of the surface from the design file of the fill surface. |
+| surfaceData.fill/origin | `Feature[@code="surfaceData.fill"]/Property[@label="origin"]` | Origin of the machine point used for setting the initial layer elevation. |
+| surfaceData.fill/layerThickness | `Feature[@code="surfaceData.fill"]/Property[@label="layerThickness"]` | Offset value applied to the fill surface. |
 
 ### 2. Application Level (optional)
 
