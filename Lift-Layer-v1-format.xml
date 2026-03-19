@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?><LandXML xmlns="http://www.landxml.org/schema/LandXML-1.2" date="2022-11-01" time="10:51:28" version="1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.landxml.org/schema/LandXML-1.2 http://www.landxml.org/schema/LandXML-1.2/LandXML-1.2.xsd">
-  <Project name="Infield Design">
-    <Feature code="infield.surface">
+  <Project name="Lift Layers Design">
+    <Feature code="liftlayers.metadata">
       <Property label="type" value="com.trimble.ctct.darkcity.fileformats.infield.lift-layers"/>
       <Property label="version" value="1"/>
-      <Property label="criticalSurfaceHash" value="3362ca5daeb29dbcd7c98abf29a76644f7febd6ac24a83c09a70ebbdda4ded03"/>
-
+      <Property label="criticalDesignFile" value="Projects/Kettlewell Drive - Site Cal/OfficeData/Designs/CriticalDesign.xml"/>
+      <Property label="criticalSurfaceName" value="Critical"/>
       <Feature code="surfaceData.fill">
-        <Property label="type" value="quick-slope"/>
-        <Property label="heading" value="0.00000"/>
-        <Property label="crossSlope" value="0.00000"/>
+        <Property label="type" value="quickSlope"/>
+        <Property label="heading" value="0.000000"/>
         <Property label="mainfall" value="0.000000"/>
-        <Property label="origin" value="376727.929523 808530.570963 67.933050"/>
-        <Property label="layerThickness" value="0.0000"/>
+        <Property label="crossSlope" value="0.000000"/>
+        <Property label="origin" value="808540.326490 376733.761444 66.500000"/>
+        <Property label="layerThickness" value="0.500000"/>
       </Feature>
     </Feature>
   </Project>
